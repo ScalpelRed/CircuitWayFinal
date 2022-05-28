@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CircuitActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/circuitView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/openTasks"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/tasksbutton"
+            android:backgroundTint="@color/mainTheme"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/detaillistbutton"
+            android:backgroundTint="@color/mainTheme"
+            android:id="@+id/OpenSelectionButton"
+            />
+
+        <TextView
+            android:id="@+id/InfoText"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:fontFamily="@font/pgr"
+            android:text="Select a detail to view information about it."
+            android:textAlignment="textStart"
+            android:textColor="@color/mainTheme"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/MessengerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pgr"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textColor="@color/mainTheme"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/openTasks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/openTasks"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/openTasks"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/CircuitField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableLayout
+                android:id="@+id/PinField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/DetailField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </RelativeLayout>
+
+
+        <!-- editorControls - control simulation in editor mode -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/MessengerText"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/editorControls"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/StartButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/resumebutton"
+                android:backgroundTint="@color/mainTheme"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- runningControls - control simulation in running mode -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/MessengerText"
+            android:id="@+id/runningControls"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/PauseButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/pausebutton"
+                android:backgroundTint="@color/mainTheme"
+                app:layout_constraintRight_toLeftOf="@id/StopButton"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/StopButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/stopbutton"
+                android:backgroundTint="@color/mainTheme"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ResumeButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/resumebutton"
+                android:backgroundTint="@color/mainTheme"
+                app:layout_constraintRight_toLeftOf="@id/StopButton"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- editorButtons - control details in editor mode -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editorButtons"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/RemoveButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/removebutton"
+                android:backgroundTint="@color/mainTheme"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ActionButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/mainTheme"
+                android:background="@drawable/specialactionbutton"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RemoveButton"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/taskView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/closeTasks"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/exitbutton"
+            android:backgroundTint="@color/mainTheme"
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/taskHeader"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/pgr"
+            android:text="Tasks"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/mainTheme"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/closeTasks"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/taskList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pgr"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainTheme"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/taskHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selectionView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/selectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pgr"
+            android:text="Detail selection"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/mainTheme"
+            android:textSize="34sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DSB_wire"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/d_wire"
+            android:backgroundTint="@color/mainTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectionHeader"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DSB_battery"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/d_battery"
+            android:backgroundTint="@color/mainTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DSB_wire"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DSB_switch"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/d_switch_off"
+            android:backgroundTint="@color/mainTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DSB_battery"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DSB_resistor"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/d_resistor"
+            android:backgroundTint="@color/mainTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DSB_switch"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DSB_disistor"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/d_disistor"
+            android:backgroundTint="@color/mainTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/DSB_resistor"
+            />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/selectionbox"
+            android:backgroundTint="@color/mainTheme"
+            android:id="@+id/detailSelection"
+            app:layout_constraintLeft_toLeftOf="@+id/DSB_wire"
+            app:layout_constraintTop_toTopOf="@+id/DSB_wire"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
